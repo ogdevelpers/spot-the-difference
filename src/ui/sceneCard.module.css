@@ -1,0 +1,135 @@
+.card{
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(8, 8, 10, 0.55);
+  color: inherit;
+  text-align: left;
+  isolation: isolate;
+  transform: translateZ(0);
+  animation: cardIn 700ms var(--ease-out) both;
+  transition: transform 280ms var(--ease-out), border-color 220ms ease;
+}
+
+.image{
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.03);
+  transition: transform 480ms var(--ease-out), filter 280ms ease;
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.overlay{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.28) 0%, transparent 32%, rgba(0,0,0,0.82) 100%);
+}
+
+.index{
+  align-self: flex-start;
+  font-family: "Syne", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--gold-soft);
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255, 216, 140, 0.3);
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+.footerRow{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.title{
+  flex: 1;
+  min-width: 0;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: 0.98rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cta{
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1a1204;
+  background: linear-gradient(135deg, var(--gold-soft), var(--amber));
+  padding: 7px 14px;
+  border-radius: 10px;
+  transition: transform 280ms var(--ease-spring), box-shadow 200ms ease;
+}
+
+.shine{
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.18) 48%, transparent 62%);
+  transform: translateX(-120%);
+  opacity: 0;
+}
+
+.card:hover,
+.card:focus-visible{
+  transform: translateY(-6px) scale(1.015);
+  border-color: rgba(255, 216, 140, 0.55);
+  outline: none;
+}
+
+.card:hover .image,
+.card:focus-visible .image{
+  transform: scale(1.1);
+  filter: saturate(1.12) contrast(1.05) brightness(1.03);
+}
+
+.card:hover .cta,
+.card:focus-visible .cta{
+  transform: scale(1.06);
+  box-shadow: 0 8px 20px rgba(255, 138, 31, 0.35);
+}
+
+.card:hover .shine,
+.card:focus-visible .shine{
+  opacity: 1;
+  animation: sheen 900ms var(--ease-out);
+}
+
+.card:active{
+  transform: translateY(-2px) scale(1.01);
+}
+
+@keyframes cardIn{
+  from{ opacity: 0; transform: translateY(28px) scale(0.96); }
+  to{ opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes sheen{
+  from{ transform: translateX(-120%); }
+  to{ transform: translateX(120%); }
+}
+
+@media (max-width: 720px){
+  .image{ aspect-ratio: 4 / 5; }
+}

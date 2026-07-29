@@ -1,0 +1,409 @@
+.page{
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg{
+  position: absolute;
+  inset: 0;
+  background:
+    url('/assets/Memory_game_1920x1080px_Back-926e4707-4ab5-483b-a13c-e1082dd88189.png') center / cover no-repeat;
+  transform: scale(1.05);
+  filter: saturate(1.05);
+}
+
+.scrim{
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(90% 70% at 50% 45%, transparent 35%, rgba(0,0,0,0.4) 100%);
+}
+
+.topBar,
+.main{
+  position: relative;
+  z-index: 1;
+  width: min(1480px, calc(100% - 32px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.topBar{
+  padding-top: 16px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: center;
+  animation: fadeUp 500ms var(--ease-out) both;
+}
+
+.backButton,
+.secondary,
+.primary,
+.ghost{
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: transform 180ms var(--ease-out), background 180ms ease, opacity 180ms ease;
+}
+
+.backButton,
+.secondary,
+.ghost{
+  color: var(--text);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 14px;
+}
+
+.backButton:hover,
+.secondary:hover,
+.ghost:hover{
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-1px);
+}
+
+.primary{
+  color: #1a1204;
+  background: linear-gradient(135deg, var(--gold-soft), var(--amber));
+  padding: 12px 18px;
+}
+
+.primary:hover{
+  transform: translateY(-1px);
+}
+
+.hud{
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.hudText{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sceneName{
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.score{
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--gold-soft);
+  letter-spacing: -0.03em;
+}
+
+.scoreSlash{
+  color: rgba(255,248,239,0.35);
+  margin: 0 2px;
+}
+
+.progressTrack{
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+
+.progressFill{
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--amber), var(--gold-soft));
+  transition: width 420ms var(--ease-out);
+}
+
+.dots{
+  display: flex;
+  gap: 6px;
+}
+
+.timer{
+  position: relative;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  justify-self: end;
+  transition: transform 220ms var(--ease-out);
+}
+
+.timerRing{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.timerTrack{
+  fill: none;
+  stroke: rgba(255,255,255,0.14);
+  stroke-width: 4;
+}
+
+.timerProgress{
+  fill: none;
+  stroke: var(--gold-soft);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 106.8;
+  transition: stroke-dashoffset 1s linear, stroke 300ms ease;
+}
+
+.timerValue{
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.timerLow .timerProgress{
+  stroke: var(--miss);
+}
+
+.timerLow .timerValue{
+  color: var(--miss);
+}
+
+.timerLow{
+  animation: timerPulse 1s ease-in-out infinite;
+}
+
+@keyframes timerPulse{
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  transition: transform 280ms var(--ease-spring), background 220ms ease;
+}
+
+.dotOn{
+  background: var(--good);
+  transform: scale(1.25);
+}
+
+.main{
+  position: relative;
+  padding: 16px 0 26px;
+  animation: fadeUp 650ms var(--ease-out) both;
+  animation-delay: 80ms;
+}
+
+.board{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.pane{
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.paneLabel{
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1a1204;
+  background: linear-gradient(135deg, var(--gold-soft), var(--amber));
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.hint{
+  margin: 18px 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Floating praise / miss toast */
+.toast{
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  z-index: 5;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  white-space: nowrap;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.45);
+  animation: toastPop 900ms var(--ease-out) both;
+  pointer-events: none;
+}
+
+.toastGood{
+  color: #052216;
+  background: linear-gradient(135deg, #7bf0c0, var(--good));
+}
+
+.toastMiss{
+  color: #fff;
+  background: linear-gradient(135deg, #ff8080, var(--miss));
+}
+
+@keyframes toastPop{
+  0%{ opacity: 0; transform: translate(-50%, 8px) scale(0.85); }
+  25%{ opacity: 1; transform: translate(-50%, -8px) scale(1.05); }
+  70%{ opacity: 1; transform: translate(-50%, -12px) scale(1); }
+  100%{ opacity: 0; transform: translate(-50%, -26px) scale(0.96); }
+}
+
+.miss{
+  animation: shake 320ms ease;
+}
+
+.status{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.result{
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  background: #000;
+  animation: fadeIn 320ms ease both;
+}
+
+.resultImg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: thankScale 900ms var(--ease-out) both;
+}
+
+.resultActions{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(16px, 4vh, 48px);
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(8px, 2vw, 14px);
+  padding: 0 clamp(12px, 4vw, 24px);
+  box-sizing: border-box;
+  animation: resultActionsIn 600ms var(--ease-out) both;
+  animation-delay: 500ms;
+}
+
+.resultActions .primary,
+.resultActions .ghost{
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: none;
+  padding: 12px clamp(12px, 3vw, 20px);
+  font-size: clamp(0.82rem, 2.4vw, 1rem);
+  white-space: nowrap;
+  text-align: center;
+}
+
+@keyframes resultActionsIn{
+  from{ opacity: 0; transform: translateY(16px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+.confetti{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.confettiPiece{
+  position: absolute;
+  top: -8%;
+  width: 10px;
+  height: 16px;
+  border-radius: 2px;
+  opacity: 0.95;
+  animation: confettiFall 2.6s linear infinite;
+}
+
+.confettiPiece:nth-child(even){
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+@keyframes confettiFall{
+  0%{ transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+  10%{ opacity: 1; }
+  100%{ transform: translateY(110vh) rotate(540deg); opacity: 0.9; }
+}
+
+@keyframes thankScale{
+  from{ opacity: 0; transform: scale(1.06); }
+  to{ opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeUp{
+  from{ opacity: 0; transform: translateY(14px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn{
+  from{ opacity: 0; }
+  to{ opacity: 1; }
+}
+
+@keyframes shake{
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(3px); }
+}
+
+@media (max-width: 860px){
+  .topBar{
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "back timer"
+      "hud hud";
+  }
+  .backButton{ grid-area: back; }
+  .hud{ grid-area: hud; }
+  .timer{ grid-area: timer; }
+  .board{ grid-template-columns: 1fr; }
+}

@@ -1,0 +1,41 @@
+:root{
+  --ink: #07070a;
+  --text: #fff8ef;
+  --muted: rgba(255, 248, 239, 0.72);
+  --gold: #f0b429;
+  --gold-soft: #ffd978;
+  --amber: #ff8a1f;
+  --good: #3ddea0;
+  --miss: #ff5d5d;
+  --panel: rgba(12, 12, 16, 0.55);
+  --line: rgba(255, 216, 140, 0.22);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*{ box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  color: var(--text);
+  background: var(--ink);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+button{
+  font-family: inherit;
+}
+
+img{
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
