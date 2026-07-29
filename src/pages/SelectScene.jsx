@@ -19,7 +19,7 @@ export default function SelectScene() {
       </header>
 
       <main className={styles.content}>
-        <p className={styles.intro}>Choose a scene and find all five hidden changes.</p>
+        <p className={styles.intro}>Choose a scene and spot all five hidden differences.</p>
 
         <section className={styles.cardsGrid} aria-label="Scene selection">
           {SCENES.map((scene, index) => (
@@ -33,10 +33,6 @@ export default function SelectScene() {
           ))}
         </section>
       </main>
-
-      <footer className={styles.footer}>
-        <span>Spot the Differences</span>
-      </footer>
     </div>
   )
 }

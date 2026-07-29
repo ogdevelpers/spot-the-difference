@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import styles from './differenceImagePane.module.css'
 
 export default function DifferenceImagePane({
@@ -12,7 +12,6 @@ export default function DifferenceImagePane({
   aspectRatio,
 }) {
   const wrapRef = useRef(null)
-  const foundSet = useMemo(() => new Set(foundIds), [foundIds])
   const [ripples, setRipples] = useState([])
 
   function handleClick(e) {
@@ -45,9 +44,9 @@ export default function DifferenceImagePane({
       <img className={styles.image} src={imageUrl} alt={alt} draggable={false} />
 
       <div className={styles.overlay} aria-hidden="true">
-        {hotspots.map((h, idx) => {
-          const found = foundSet.has(h.id)
-          if (!found) return null
+        {hotspots.map((h) => {
+          const foundOrder = foundIds.indexOf(h.id)
+          if (foundOrder < 0) return null
           const newest = lastFoundId === h.id
           return (
             <div
@@ -61,7 +60,7 @@ export default function DifferenceImagePane({
               }}
             >
               <span className={styles.ring} />
-              <span className={styles.label}>{idx + 1}</span>
+              <span className={styles.label}>{foundOrder + 1}</span>
             </div>
           )
         })}
