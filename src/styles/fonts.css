@@ -1,0 +1,140 @@
+/* IKT1 brand fonts */
+
+/* Display / titles — Titling Gothic FB */
+@font-face {
+  font-family: "Titling Gothic FB";
+  src: url("/fonts/TitlingGothicFBNor-Reg-AF65ddb13687017.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Titling Gothic FB";
+  src: url("/fonts/TitlingGothicFBNor-Med-AF65ddb1368da86.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Titling Gothic FB";
+  src: url("/fonts/TitlingGothicFBNor-Stand-AF65ddb1368137c.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Titling Gothic FB";
+  src: url("/fonts/TitlingGothicFBWide-Bold-AF65ddb136479f5.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Titling Gothic FB";
+  src: url("/fonts/TitlingGothicFBWide-Black-AF65ddb1364d268.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Titling Gothic FB Narrow";
+  src: url("/fonts/Titling_Gothic_FB-Narrow_Black-Regular.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Titling Gothic FB Condensed";
+  src: url("/fonts/Titling_Gothic_CondensedBlack-Regular.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Body — Segoe UI */
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/fonts/SEGOEUISL.TTF") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/fonts/SEGOEUI.TTF") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/fonts/SEGOEUII.TTF") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/fonts/SEGUISB.TTF") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/fonts/SEGOEUIB.TTF") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/fonts/SEGOEUIZ.TTF") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Hindi / Devanagari support — Anek Devanagari */
+@font-face {
+  font-family: "Anek Devanagari";
+  src: url("/fonts/ANEKDEVANAGARI-REGULAR.TTF") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Anek Devanagari";
+  src: url("/fonts/ANEKDEVANAGARI-MEDIUM.TTF") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Anek Devanagari";
+  src: url("/fonts/ANEKDEVANAGARI-SEMIBOLD.TTF") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Anek Devanagari";
+  src: url("/fonts/ANEKDEVANAGARI-BOLD.TTF") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,3 +1,5 @@
+@import "./fonts.css";
+
 :root{
   --ink: #07070a;
   --text: #fff8ef;
@@ -11,13 +13,16 @@
   --line: rgba(255, 216, 140, 0.22);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --font-display: "Titling Gothic FB Narrow", "Titling Gothic FB Condensed", "Titling Gothic FB", "Segoe UI", sans-serif;
+  --font-body: "Segoe UI", "Anek Devanagari", sans-serif;
 }
 
 *{ box-sizing: border-box; }
 html, body { height: 100%; }
 body{
   margin: 0;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-body);
   color: var(--text);
   background: var(--ink);
   overflow-x: hidden;

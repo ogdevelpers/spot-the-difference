@@ -16,7 +16,7 @@ export const SCENES = [
     differences: [
       { id: 'd1', x: 0.270, y: 0.390, w: 0.05, h: 0.1 }, // flight monitor
       { id: 'd2', x: 0.440, y: 0.5, w: 0.05, h: 0.11 }, // brown bag
-      { id: 'd3', x: 0.58, y: 0.550, w: 0.05, h: 0.14 }, // ottoman
+      { id: 'd3', x: 0.55, y: 0.550, w: 0.10, h: 0.14 }, // ottoman
       { id: 'd4', x: 0.70, y: 0.03, w: 0.04, h: 0.45 }, // window frame
       { id: 'd5', x: 0.780, y: 0.43, w: 0.05, h: 0.09 }, // airplane tail
     ],
