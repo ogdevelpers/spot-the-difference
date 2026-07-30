@@ -45,7 +45,7 @@
   font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(1.3rem, 3vw, 2.1rem);
-  letter-spacing: -0.03em;
+  letter-spacing: 0.08em;
   line-height: 1.02;
   color: #fff7ea;
   text-shadow: 0 10px 30px rgba(0,0,0,0.5);

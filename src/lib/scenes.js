@@ -12,13 +12,13 @@ export const SCENES = [
     title: 'Airport Lounge',
     cardImage: `${ASSET_BASE}/Airport_lounge-12f865cd-951b-496c-b4c6-32436cf0139f.png`,
     leftImage: `${ASSET_BASE}/Airport_lounge-12f865cd-951b-496c-b4c6-32436cf0139f.png`,
-    rightImage: `${ASSET_BASE}/WhatsApp_Image_2026-07-29_at_15.04.47-3c266579-dde1-4d82-9e3a-94b2a42dda22.png`,
+    rightImage: `${ASSET_BASE}/WhatsApp_Image_2026-07-30_at_20.22.27-7bd5afbb-0d9e-45b6-a357-e3641ae1da8c.png`,
     differences: [
-      { id: 'd1', x: 0.270, y: 0.390, w: 0.05, h: 0.1 }, // flight monitor
-      { id: 'd2', x: 0.440, y: 0.5, w: 0.05, h: 0.11 }, // brown bag
-      { id: 'd3', x: 0.55, y: 0.550, w: 0.10, h: 0.14 }, // ottoman
-      { id: 'd4', x: 0.70, y: 0.03, w: 0.04, h: 0.45 }, // window frame
-      { id: 'd5', x: 0.780, y: 0.43, w: 0.05, h: 0.09 }, // airplane tail
+      { id: 'd1', x: 0.075, y: 0.187, w: 0.05, h: 0.10 }, // ceiling light
+      { id: 'd2', x: 0.266, y: 0.396, w: 0.05, h: 0.10 }, // flight monitor
+      { id: 'd3', x: 0.443, y: 0.510, w: 0.05, h: 0.10 }, // brown bag
+      { id: 'd4', x: 0.555, y: 0.548, w: 0.10, h: 0.13 }, // ottoman
+      { id: 'd5', x: 0.786, y: 0.426, w: 0.05, h: 0.09 }, // airplane tail
     ],
   },
   {

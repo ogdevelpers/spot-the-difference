@@ -47,6 +47,7 @@
   font-weight: 900;
   border-radius: 12px;
   transition: transform 180ms var(--ease-out), background 180ms ease, opacity 180ms ease;
+  letter-spacing: 0.08em;
 }
 
 .backButton,
@@ -92,7 +93,7 @@
   font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(1rem, 2vw, 1.2rem);
-  letter-spacing: -0.02em;
+  letter-spacing: 0.08em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -103,7 +104,7 @@
   font-weight: 900;
   font-size: 1.25rem;
   color: var(--gold-soft);
-  letter-spacing: -0.03em;
+  letter-spacing: 0.08em;
 }
 
 .scoreSlash{
@@ -169,6 +170,7 @@
   font-size: 1.05rem;
   color: var(--text);
   font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
 }
 
 .timerLow .timerProgress{
@@ -228,7 +230,7 @@
   font-family: var(--font-display);
   font-size: 0.74rem;
   font-weight: 900;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #1a1204;
   background: linear-gradient(135deg, var(--gold-soft), var(--amber));
